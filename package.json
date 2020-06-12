@@ -1,0 +1,32 @@
+{
+  "name": "typescript-cucumberjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/cucumber": "^6.0.1",
+    "chai": "^4.2.0",
+    "cucumber": "^6.0.5",
+    "cucumber-pretty": "^6.0.0",
+    "cucumber-tsflow": "^3.2.0",
+    "ts-node": "^8.10.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.9.5",
+    "webdriverio": "^6.1.17"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js features --require step-definitions/google-search-steps.ts  --require-module ts-node/register --format node_modules/cucumber-pretty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noorshah/typescript-cucumberJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noorshah/typescript-cucumberJS/issues"
+  },
+  "homepage": "https://github.com/noorshah/typescript-cucumberJS#readme"
+}
