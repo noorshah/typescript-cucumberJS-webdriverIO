@@ -7,17 +7,25 @@
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/cucumber": "^6.0.1",
+    "@wdio/cli": "^6.1.17",
+    "@wdio/cucumber-framework": "^6.1.17",
+    "@wdio/local-runner": "^6.1.17",
+    "@wdio/mocha-framework": "^6.1.17",
+    "@wdio/spec-reporter": "^6.1.14",
+    "@wdio/sync": "^6.1.14",
     "chai": "^4.2.0",
+    "chromedriver": "^83.0.0",
     "cucumber": "^6.0.5",
     "cucumber-pretty": "^6.0.0",
     "cucumber-tsflow": "^3.2.0",
     "ts-node": "^8.10.2",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.5",
+    "wdio-chromedriver-service": "^6.0.3",
     "webdriverio": "^6.1.17"
   },
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js features --require step-definitions/google-search-steps.ts  --require-module ts-node/register --format node_modules/cucumber-pretty"
+    "test": "./node_modules/.bin/cucumber-js features --require step-definitions/google-search-steps.ts  --require support/*.ts --require-module ts-node/register --format node_modules/cucumber-pretty"
   },
   "repository": {
     "type": "git",

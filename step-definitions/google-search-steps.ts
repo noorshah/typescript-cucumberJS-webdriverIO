@@ -1,8 +1,9 @@
-import {Given,When,Then} from 'cucumber'
+import {Given,When,Then, World, setWorldConstructor} from 'cucumber'
 import {assert} from 'chai'
 
-Given('I navigate to google home page', async function () {
 
+Given('I navigate to google home page',function () {
+      this.navigation()
   })
 
   When('I search for mangoes', async function () {
