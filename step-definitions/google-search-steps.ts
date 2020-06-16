@@ -1,14 +1,17 @@
-import {Given,When,Then, World, setWorldConstructor} from 'cucumber'
-import {assert} from 'chai'
+import { Given,When,Then } from 'cucumber'
+import { assert } from 'chai'
+import {homepage} from 'support/google-home-page'
 
+    
+    Given('I navigate to google home page', function () {
+        homepage.navigate()
 
-Given('I navigate to google home page',function () {
-      this.navigation()
-  })
+    })
 
-  When('I search for mangoes', async function () {
-   
-  })
+    When('I search for mangoes', function () {
+      homepage.searchForMangoes()
+    })
 
-  Then('I get relevant information', async function () {
-  })
+    Then('I get relevant information', async function () {
+        
+    })

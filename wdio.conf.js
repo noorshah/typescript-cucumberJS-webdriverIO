@@ -124,7 +124,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['cucumber'],
+    reporters: ['cucumberjs-json'],
 
 
     
@@ -132,8 +132,12 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     cucumberOpts: {
-        compiler: ['ts:ts-node/register'],       // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
-        require: ['./step-definitions/*.ts'],        // <string[]> (file/dir) require files before executing features
+        requireModule: [
+            'tsconfig-paths/register',
+            () => { require('ts-node').register({ files: true }) },
+        ],      // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
+        require: ['./step-definitions/*.ts'], 
+      // <string[]> (file/dir) require files before executing features
         backtrace: false,   // <boolean> show full backtrace for errors
         dryRun: false,      // <boolean> invoke formatters without executing steps
         failFast: false,    // <boolean> abort the run on first failure
@@ -211,9 +215,9 @@ exports.config = {
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
-     */
-    // beforeHook: function (test, context) {
-    // },
+     */,
+    beforeHook: function (test, context, stepData, world) {
+    },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
@@ -276,4 +280,6 @@ exports.config = {
     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
+
+    
 }
