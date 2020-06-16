@@ -11,6 +11,7 @@ import { setWorldConstructor,World } from 'cucumber'
 
     get searchbox(){ return $('input[name=q]')}
     get submitsearch(){ return $('input[name=btnK]')}
+    get mangoSearchResults(){return $("//a//h3[contains(text(),'Mango')]")}
 
     navigate(){
         browser.url('https://www.google.co.uk')
@@ -20,7 +21,6 @@ import { setWorldConstructor,World } from 'cucumber'
     searchForMangoes(){
     this.searchbox.setValue('mangoes')
     this.submitsearch.click()
-
     }
 
 }
