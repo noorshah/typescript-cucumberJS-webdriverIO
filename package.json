@@ -28,7 +28,7 @@
     "webdriverio": "^6.1.17"
   },
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js features --require step-definitions/google-search-steps.ts  --require support/*.ts --require-module ts-node/register --format node_modules/cucumber-pretty",
+    "test": "./node_modules/.bin/cucumber-js 'features/*.feature' --require 'step-definitions/**/*.ts'  --require 'support/**/*.ts' --require-module ts-node/register --format node_modules/cucumber-pretty",
     "webdriver": "./node_modules/.bin/wdio  wdio.conf.js"
   },
   "repository": {

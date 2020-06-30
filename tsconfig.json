@@ -4,7 +4,7 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "strict": true,
+        // "strict": true,
         "baseUrl": ".",
         "paths": {
             "*": [ "./*" ],
